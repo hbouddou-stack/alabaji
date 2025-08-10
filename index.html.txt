@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة - أكاديمية الإمام الباجي</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1565C0;
+            --secondary-color: #2E7D32;
+            --accent-color: #F57C00;
+            --neutral-bg: #FFFFFF;
+            --light-bg: #F8F9FA;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --border-color: #E0E0E0;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --error-color: #F44336;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 16px rgba(0,0,0,0.15);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--light-bg);
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: white;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-family: inherit;
+            direction: rtl;
+            transition: var(--transition);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .suggestion-item:hover {
+            background-color: var(--light-bg);
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Top Questions */
+        .top-questions {
+            background: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .top-questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .top-question-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-right: 4px solid var(--accent-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .top-question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .top-question-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .top-question-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Categories Grid */
+        .categories-section {
+            padding: 2rem 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+        }
+
+        .category-questions {
+            list-style: none;
+        }
+
+        .category-questions li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category-questions li:hover {
+            color: var(--primary-color);
+            padding-right: 10px;
+        }
+
+        .category-questions li:last-child {
+            border-bottom: none;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .question-preview {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            position: relative;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .close {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close:hover {
+            opacity: 0.7;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .answer-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .answer-content h4 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .answer-content ul {
+            margin: 1rem 0;
+            padding-right: 2rem;
+        }
+
+        .answer-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .related-questions {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .related-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-link {
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: var(--transition);
+            border-right: 3px solid var(--accent-color);
+        }
+
+        .related-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .guide-step {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            background: var(--light-bg);
+            transition: var(--transition);
+        }
+
+        .guide-step:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem auto;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0 1rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .search-box {
+                font-size: 1rem;
+                padding: 0.875rem 2.5rem 0.875rem 0.875rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .top-questions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .guide-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .related-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.5rem 0;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .category-header {
+                padding: 1rem;
+            }
+
+            .category-icon {
+                font-size: 2rem;
+            }
+
+            .category-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        .category-card:focus,
+        .top-question-card:focus,
+        .search-box:focus {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .header,
+            .search-section,
+            .footer {
+                display: none;
+            }
+            
+            .modal-content {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🏛️ أكاديمية الإمام الباجي</h1>
+                <p class="subtitle">الأسئلة الشائعة - دليلك الشامل للمعلومات الأكاديمية</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 ابحث عن إجابات لأسئلتك هنا..." id="searchInput">
+                <i class="fas fa-search search-icon"></i>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Questions -->
+    <section class="top-questions">
+        <div class="container">
+            <h2 class="section-title">⭐ الأسئلة الأكثر شيوعاً</h2>
+            <div class="top-questions-grid">
+                <div class="top-question-card" onclick="openModal('registration-conditions')">
+                    <h3>🎓 ما هي شروط التسجيل في الأكاديمية؟</h3>
+                    <p>تعرف على المتطلبات الأساسية للانضمام إلينا</p>
+                </div>
+                <div class="top-question-card" onclick="openModal('tuition-fees')">
+                    <h3>💰 كم تبلغ الرسوم الدراسية؟</h3>
+                    <p>دليل شامل للرسوم والمنح المتاحة</p>
+                </div>
+                <div class="top-question-card" onclick="openModal('academic-year')">
+                    <h3>📅 متى يبدأ العام الدراسي؟</h3>
+                    <p>التقويم الأكاديمي والمواعيد المهمة</p>
+                </div>
+                <div class="top-question-card" onclick="openModal('elearning-access')">
+                    <h3>💻 كيف أصل للمنصة الإلكترونية؟</h3>
+                    <p>دليل استخدام منصة التعليم الإلكتروني</p>
+                </div>
+                <div class="top-question-card" onclick="openModal('contact-info')">
+                    <h3>📞 كيف أتواصل مع الأكاديمية؟</h3>
+                    <p>جميع طرق التواصل والدعم المتاحة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="guide-section">
+        <div class="container">
+            <h2 class="section-title">🗺️ دليل المستخدم الجديد</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                اتبع هذه الخطوات البسيطة للحصول على المعلومات التي تحتاجها
+            </p>
+            <div class="guide-steps">
+                <div class="guide-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">🔍 ابحث أو تصفح</h3>
+                    <p>استخدم شريط البحث أو تصفح الفئات المختلفة</p>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">📖 اقرأ الإجابة</h3>
+                    <p>اضغط على السؤال للحصول على إجابة مفصلة</p>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">🔗 تصفح المرتبط</h3>
+                    <p>استكشف الأسئلة ذات الصلة للمزيد من المعلومات</p>
+                </div>
+                <div class="guide-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">📞 تواصل معنا</h3>
+                    <p>لم تجد ما تبحث عنه؟ تواصل مع فريق الدعم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">📁 الفئات الرئيسية</h2>
+            <div class="categories-grid">
+                <!-- Category 1: Registration -->
+                <div class="category-card" tabindex="0">
+                    <div class="category-header">
+                        <span class="category-icon">📚</span>
+                        <h3 class="category-title">التسجيل والقبول</h3>
+                        <p class="category-subtitle">كل ما تحتاج معرفته عن الانضمام إلينا</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-questions">
+                            <li onclick="openModal('registration-conditions')">
+                                <div class="question-text">🎓 ما هي شروط التسجيل؟</div>
+                                <div class="question-preview">المتطلبات الأساسية للقبول</div>
+                            </li>
+                            <li onclick="openModal('registration-period')">
+                                <div class="question-text">📅 متى فترة التسجيل؟</div>
+                                <div class="question-preview">مواعيد فتح وإغلاق التسجيل</div>
+                            </li>
+                            <li onclick="openModal('online-registration')">
+                                <div class="question-text">💻 كيف أسجل إلكترونياً؟</div>
+                                <div class="question-preview">خطوات التسجيل عبر الإنترنت</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 2: Programs -->
+                <div class="category-card" tabindex="0">
+                    <div class="category-header">
+                        <span class="category-icon">📖</span>
+                        <h3 class="category-title">البرامج الدراسية</h3>
+                        <p class="category-subtitle">التخصصات والمناهج المتاحة</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-questions">
+                            <li onclick="openModal('available-majors')">
+                                <div class="question-text">🎯 ما التخصصات المتاحة؟</div>
+                                <div class="question-preview">جميع البرامج الأكاديمية</div>
+                            </li>
+                            <li onclick="openModal('study-duration')">
+                                <div class="question-text">⏰ كم مدة الدراسة؟</div>
+                                <div class="question-preview">فترات البكالوريوس والدراسات العليا</div>
+                            </li>
+                            <li onclick="openModal('curriculum-details')">
+                                <div class="question-text">📋 تفاصيل المناهج</div>
+                                <div class="question-preview">محتوى ومتطلبات كل تخصص</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 3: Fees -->
+                <div class="category-card" tabindex="0">
+                    <div class="category-header">
+                        <span class="category-icon">💰</span>
+                        <h3 class="category-title">الرسوم والمنح</h3>
+                        <p class="category-subtitle">التكاليف والدعم المالي المتاح</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-questions">
+                            <li onclick="openModal('tuition-fees')">
+                                <div class="question-text">💵 كم الرسوم السنوية؟</div>
+                                <div class="question-preview">تفاصيل رسوم جميع المراحل</div>
+                            </li>
+                            <li onclick="openModal('scholarships')">
+                                <div class="question-text">🎁 هل تتوفر منح؟</div>
+                                <div class="question-preview">أنواع المنح وشروط الحصول عليها</div>
+                            </li>
+                            <li onclick="openModal('payment-methods')">
+                                <div class="question-text">💳 طرق الدفع المتاحة</div>
+                                <div class="question-preview">الوسائل المقبولة لسداد الرسوم</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 4: Calendar -->
+                <div class="category-card" tabindex="0">
+                    <div class="category-header">
+                        <span class="category-icon">🗓️</span>
+                        <h3 class="category-title">التقويم الأكاديمي</h3>
+                        <p class="category-subtitle">المواعيد والفصول الدراسية</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-questions">
+                            <li onclick="openModal('academic-year')">
+                                <div class="question-text">📅 متى يبدأ العام الدراسي؟</div>
+                                <div class="question-preview">مواعيد بداية الفصول</div>
+                            </li>
+                            <li onclick="openModal('holidays')">
+                                <div class="question-text">🕌 الإجازات الرسمية</div>
+                                <div class="question-preview">العطل الدينية والوطنية</div>
+                            </li>
+                            <li onclick="openModal('important-dates')">
+                                <div class="question-text">⭐ المواعيد المهمة</div>
+                                <div class="question-preview">تواريخ التسجيل والامتحانات</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 5: Exams -->
+                <div class="category-card" tabindex="0">
+                    <div class="category-header">
+                        <span class="category-icon">🎓</span>
+                        <h3 class="category-title">الامتحانات والتقييم</h3>
+                        <p class="category-subtitle">نظام الدرجات والاختبارات</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-questions">
+                            <li onclick="openModal('grading-system')">
+                                <div class="question-text">📊 كيف يتم التقييم؟</div>
+                                <div class="question-preview">نظام الدرجات والنقاط</div>
+                            </li>
+                            <li onclick="openModal('exam-schedule')">
+                                <div class="question-text">📅 مواعيد الامتحانات</div>
+                                <div class="question-preview">جدول الاختبارات النهائية</div>
+                            </li>
+                            <li onclick="openModal('make-up-exams')">
+                                <div class="question-text">🔄 امتحانات الإعادة</div>
+                                <div class="question-preview">شروط وإجراءات الامتحان البديل</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 6: Student Services -->
+                <div class="category-card" tabindex="0">
+                    <div class="category-header">
+                        <span class="category-icon">🏛️</span>
+                        <h3 class="category-title">الخدمات الطلابية</h3>
+                        <p class="category-subtitle">المرافق والخدمات المساندة</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-questions">
+                            <li onclick="openModal('dormitory')">
+                                <div class="question-text">🏠 خدمات السكن الطلابي</div>
+                                <div class="question-preview">المجمعات السكنية والمرافق</div>
+                            </li>
+                            <li onclick="openModal('health-services')">
+                                <div class="question-text">🏥 الخدمات الصحية</div>
+                                <div class="question-preview">العيادة والتأمين الطبي</div>
+                            </li>
+                            <li onclick="openModal('library')">
+                                <div class="question-text">📚 المكتبة والموارد</div>
+                                <div class="question-preview">الكتب وقواعد البيانات</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 7: E-Learning -->
+                <div class="category-card" tabindex="0">
+                    <div class="category-header">
+                        <span class="category-icon">💻</span>
+                        <h3 class="category-title">التعليم الإلكتروني</h3>
+                        <p class="category-subtitle">المنصات والأدوات الرقمية</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-questions">
+                            <li onclick="openModal('elearning-access')">
+                                <div class="question-text">🌐 كيف أصل للمنصة؟</div>
+                                <div class="question-preview">خطوات تسجيل الدخول</div>
+                            </li>
+                            <li onclick="openModal('mobile-app')">
+                                <div class="question-text">📱 التطبيق المحمول</div>
+                                <div class="question-preview">استخدام المنصة على الهاتف</div>
+                            </li>
+                            <li onclick="openModal('technical-support')">
+                                <div class="question-text">🔧 الدعم التقني</div>
+                                <div class="question-preview">حل المشاكل التقنية</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Category 8: Contact -->
+                <div class="category-card" tabindex="0">
+                    <div class="category-header">
+                        <span class="category-icon">📞</span>
+                        <h3 class="category-title">التواصل والدعم</h3>
+                        <p class="category-subtitle">طرق التواصل وخدمة العملاء</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-questions">
+                            <li onclick="openModal('contact-info')">
+                                <div class="question-text">📞 كيف أتواصل معكم؟</div>
+                                <div class="question-preview">جميع وسائل الاتصال</div>
+                            </li>
+                            <li onclick="openModal('office-hours')">
+                                <div class="question-text">⏰ ساعات العمل</div>
+                                <div class="question-preview">أوقات الدعم والخدمة</div>
+                            </li>
+                            <li onclick="openModal('complaints')">
+                                <div class="question-text">📝 تقديم شكوى</div>
+                                <div class="question-preview">إجراءات تقديم الشكاوى</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="faqModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 class="modal-title" id="modalTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="answer-content" id="modalContent"></div>
+                <div class="related-questions">
+                    <h3 class="related-title">🔗 أسئلة ذات صلة</h3>
+                    <div class="related-links" id="relatedLinks"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📞 اتصل بنا</h3>
+                    <ul>
+                        <li>📧 info@bajiAcademy.edu.tn</li>
+                        <li>☎️ 71 123 456 (+216)</li>
+                        <li>💬 98 765 432 (+216)</li>
+                        <li>📍 شارع الإمام الباجي، تونس</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>🔗 روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#registration">التسجيل والقبول</a></li>
+                        <li><a href="#programs">البرامج الدراسية</a></li>
+                        <li><a href="#elearning">التعليم الإلكتروني</a></li>
+                        <li><a href="#contact">التواصل والدعم</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>ℹ️ معلومات مهمة</h3>
+                    <ul>
+                        <li><a href="#calendar">التقويم الأكاديمي</a></li>
+                        <li><a href="#fees">الرسوم والمنح</a></li>
+                        <li><a href="#services">الخدمات الطلابية</a></li>
+                        <li><a href="#exams">الامتحانات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>🌐 تابعونا</h3>
+                    <ul>
+                        <li><a href="#">📘 فيسبوك</a></li>
+                        <li><a href="#">🐦 تويتر</a></li>
+                        <li><a href="#">📸 إنستغرام</a></li>
+                        <li><a href="#">💼 لينكد إن</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 أكاديمية الإمام الباجي. جميع الحقوق محفوظة. 🏛️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Data
+        const faqData = {
+            'registration-conditions': {
+                title: '🎓 ما هي شروط التسجيل في أكاديمية الإمام الباجي؟',
+                content: `
+                    <h4>📋 الشروط الأساسية للتسجيل:</h4>
+                    <ul>
+                        <li>📜 شهادة الثانوية العامة أو ما يعادلها معتمدة</li>
+                        <li>📊 معدل لا يقل عن 12/20 في الثانوية العامة</li>
+                        <li>📄 ملف التسجيل مكتمل بجميع المستندات المطلوبة</li>
+                        <li>💰 دفع رسوم التسجيل (غير مسترجعة)</li>
+                        <li>🏥 شهادة طبية سارية المفعول</li>
+                        <li>📸 صور شخصية حديثة (4 صور)</li>
+                        <li>🆔 نسخة من بطاقة الهوية الوطنية</li>
+                        <li>📝 خطاب دوافع (للدراسات العليا)</li>
+                    </ul>
+                    
+                    <h4>📋 المستندات المطلوبة للطلاب الدوليين:</h4>
+                    <ul>
+                        <li>🌍 شهادة معادلة الدرجات من وزارة التعليم</li>
+                        <li>🛂 جواز سفر ساري المفعول</li>
+                        <li>📄 تأشيرة دراسة (إن لزم الأمر)</li>
+                        <li>🏥 تأمين صحي دولي</li>
+                        <li>💰 إثبات القدرة المالية</li>
+                    </ul>
+                `,
+                related: ['registration-period', 'online-registration', 'tuition-fees']
+            },
+            'registration-period': {
+                title: '📅 متى تفتح فترة التسجيل للعام الدراسي الجديد؟',
+                content: `
+                    <h4>📅 مواعيد التسجيل للعام الدراسي 2025-2026:</h4>
+                    <ul>
+                        <li>🗓️ <strong>فترة التسجيل المبكر:</strong> من 1 يونيو إلى 31 يوليو</li>
+                        <li>🗓️ <strong>فترة التسجيل العادي:</strong> من 1 أغسطس إلى 31 أغسطس</li>
+                        <li>🗓️ <strong>فترة التسجيل المتأخر:</strong> من 1 سبتمبر إلى 15 سبتمبر</li>
+                    </ul>
+                    
+                    <h4>💰 رسوم التسجيل حسب الفترة:</h4>
+                    <ul>
+                        <li>✅ <strong>التسجيل المبكر:</strong> خصم 10% على رسوم التسجيل</li>
+                        <li>📅 <strong>التسجيل العادي:</strong> الرسوم العادية</li>
+                        <li>⚠️ <strong>التسجيل المتأخر:</strong> رسوم إضافية 200 دينار</li>
+                    </ul>
+                    
+                    <h4>⭐ مميزات التسجيل المبكر:</h4>
+                    <ul>
+                        <li>💰 خصم على رسوم التسجيل</li>
+                        <li>🎯 أولوية في اختيار التخصص</li>
+                        <li>🏠 أولوية في الحصول على السكن الطلابي</li>
+                        <li>📚 وقت أكثر لإعداد الملف والمستندات</li>
+                    </ul>
+                `,
+                related: ['registration-conditions', 'online-registration', 'tuition-fees']
+            },
+            'online-registration': {
+                title: '💻 كيف يمكنني التسجيل إلكترونياً؟',
+                content: `
+                    <h4>🔢 خطوات التسجيل الإلكتروني:</h4>
+                    <ul>
+                        <li><strong>الخطوة 1:</strong> 🌐 زيارة الموقع الرسمي للأكاديمية</li>
+                        <li><strong>الخطوة 2:</strong> 👤 إنشاء حساب جديد بالبريد الإلكتروني</li>
+                        <li><strong>الخطوة 3:</strong> ✅ تفعيل الحساب عبر رسالة التأكيد</li>
+                        <li><strong>الخطوة 4:</strong> 📋 ملء استمارة التسجيل بالمعلومات الشخصية</li>
+                        <li><strong>الخطوة 5:</strong> 📎 رفع المستندات المطلوبة (PDF, JPG)</li>
+                        <li><strong>الخطوة 6:</strong> 🎯 اختيار التخصص والفترة الدراسية</li>
+                        <li><strong>الخطوة 7:</strong> 💳 دفع رسوم التسجيل إلكترونياً</li>
+                        <li><strong>الخطوة 8:</strong> 📧 انتظار رسالة التأكيد النهائية</li>
+                    </ul>
+                    
+                    <h4>💳 طرق الدفع الإلكتروني المقبولة:</h4>
+                    <ul>
+                        <li>💳 بطاقات الفيزا والماستركارد</li>
+                        <li>🏦 التحويل البنكي المباشر</li>
+                        <li>📱 محافظ إلكترونية (PayPal, etc.)</li>
+                        <li>🏪 دفع عن طريق نقاط البيع</li>
+                    </ul>
+                    
+                    <h4>⚠️ نصائح مهمة:</h4>
+                    <ul>
+                        <li>📄 تأكد من وضوح جميع المستندات المرفوعة</li>
+                        <li>📧 استخدم بريد إلكتروني نشط ومتاح</li>
+                        <li>💾 احتفظ بنسخة من إيصال الدفع</li>
+                        <li>📞 تواصل معنا في حالة أي مشكلة تقنية</li>
+                    </ul>
+                `,
+                related: ['registration-conditions', 'registration-period', 'technical-support']
+            },
+            'tuition-fees': {
+                title: '💰 كم تبلغ الرسوم الدراسية السنوية؟',
+                content: `
+                    <h4>🎓 رسوم البكالوريوس (السنة الواحدة):</h4>
+                    <ul>
+                        <li>🏠 <strong>طلاب محليون:</strong> 2,000 دينار تونسي</li>
+                        <li>🌍 <strong>طلاب دوليون:</strong> 4,000 دينار تونسي</li>
+                        <li>📚 <strong>رسوم المختبرات:</strong> 200 دينار إضافية (للتخصصات التطبيقية)</li>
+                    </ul>
+                    
+                    <h4>🎓 رسوم الدراسات العليا (السنة الواحدة):</h4>
+                    <ul>
+                        <li>🏠 <strong>ماجستير - طلاب محليون:</strong> 3,000 دينار</li>
+                        <li>🌍 <strong>ماجستير - طلاب دوليون:</strong> 6,000 دينار</li>
+                        <li>🏠 <strong>دكتوراه - طلاب محليون:</strong> 4,000 دينار</li>
+                        <li>🌍 <strong>دكتوراه - طلاب دوليون:</strong> 8,000 دينار</li>
+                    </ul>
+                    
+                    <h4>💰 رسوم إضافية:</h4>
+                    <ul>
+                        <li>📝 <strong>رسوم التسجيل:</strong> 300 دينار (غير مسترجعة)</li>
+                        <li>🏠 <strong>السكن الطلابي:</strong> 1,200 دينار/سنة</li>
+                        <li>🍽️ <strong>وجبات الطعام:</strong> 800 دينار/سنة</li>
+                        <li>📚 <strong>رسوم المكتبة:</strong> 100 دينار/سنة</li>
+                        <li>🎓 <strong>رسوم التخرج:</strong> 250 دينار</li>
+                    </ul>
+                    
+                    <h4>💳 خيارات الدفع:</h4>
+                    <ul>
+                        <li>💰 <strong>دفعة واحدة:</strong> خصم 5% من إجمالي الرسوم</li>
+                        <li>📅 <strong>قسطين:</strong> 60% بداية العام، 40% منتصف العام</li>
+                        <li>📅 <strong>ثلاثة أقساط:</strong> توزيع متساوي على مدار العام</li>
+                    </ul>
+                `,
+                related: ['scholarships', 'payment-methods', 'registration-conditions']
+            },
+            'scholarships': {
+                title: '🎁 هل تتوفر منح دراسية؟',
+                content: `
+                    <h4>🏆 منح التفوق الأكاديمي:</h4>
+                    <ul>
+                        <li>⭐ <strong>الأول على الدفعة:</strong> منحة كاملة 100%</li>
+                        <li>🥈 <strong>الثاني والثالث:</strong> منحة 75%</li>
+                        <li>🏅 <strong>أفضل 10 طلاب:</strong> منحة 50%</li>
+                        <li>📊 <strong>معدل +16/20:</strong> منحة 25%</li>
+                    </ul>
+                    
+                    <h4>🤝 منح الحاجة المالية:</h4>
+                    <ul>
+                        <li>👨‍👩‍👧‍👦 <strong>الأسر محدودة الدخل:</strong> حتى 75%</li>
+                        <li>💔 <strong>الأيتام:</strong> منحة كاملة + بدل معيشة</li>
+                        <li>♿ <strong>ذوي الاحتياجات الخاصة:</strong> منحة كاملة + دعم إضافي</li>
+                        <li>⚔️ <strong>أبناء الشهداء:</strong> منحة كاملة + مميزات خاصة</li>
+                    </ul>
+                    
+                    <h4>🌍 منح الطلاب الدوليين:</h4>
+                    <ul>
+                        <li>🎯 <strong>منحة التميز الدولية:</strong> 50% للمتفوقين</li>
+                        <li>🤝 <strong>منحة التبادل الثقافي:</strong> 25-50%</li>
+                        <li>🕌 <strong>منحة الدول الإسلامية:</strong> خصم خاص 30%</li>
+                    </ul>
+                    
+                    <h4>📋 شروط الحصول على المنحة:</h4>
+                    <ul>
+                        <li>📊 الحفاظ على معدل أكاديمي مرتفع</li>
+                        <li>🎯 عدم وجود إنذارات أكاديمية أو سلوكية</li>
+                        <li>📝 تقديم طلب المنحة في المواعيد المحددة</li>
+                        <li>💼 تقديم الوثائق المالية المطلوبة (للمنح المالية)</li>
+                        <li>🏆 المشاركة في الأنشطة الطلابية والمجتمعية</li>
+                    </ul>
+                    
+                    <h4>📅 مواعيد تقديم طلبات المنح:</h4>
+                    <ul>
+                        <li>🗓️ <strong>للطلاب الجدد:</strong> من 1 يونيو إلى 31 يوليو</li>
+                        <li>🗓️ <strong>للطلاب الحاليين:</strong> من 1 مايو إلى 30 يونيو</li>
+                        <li>📧 <strong>إعلان النتائج:</strong> خلال شهر أغسطس</li>
+                    </ul>
+                `,
+                related: ['tuition-fees', 'registration-conditions', 'contact-info']
+            },
+            'academic-year': {
+                title: '📅 متى يبدأ العام الدراسي 2025-2026؟',
+                content: `
+                    <h4>📅 تواريخ بداية الفصول الدراسية:</h4>
+                    <ul>
+                        <li>🍂 <strong>الفصل الأول:</strong> 15 سبتمبر 2025 - 30 يناير 2026</li>
+                        <li>🌸 <strong>الفصل الثاني:</strong> 15 فبراير 2026 - 30 مايو 2026</li>
+                        <li>☀️ <strong>الفصل الصيفي (اختياري):</strong> 15 يونيو 2026 - 31 أغسطس 2026</li>
+                    </ul>
+                    
+                    <h4>📚 فترات الامتحانات:</h4>
+                    <ul>
+                        <li>📖 <strong>امتحانات منتصف الفصل الأول:</strong> 15-25 نوفمبر 2025</li>
+                        <li>📖 <strong>امتحانات نهاية الفصل الأول:</strong> 15-30 يناير 2026</li>
+                        <li>📖 <strong>امتحانات منتصف الفصل الثاني:</strong> 15-25 مارس 2026</li>
+                        <li>📖 <strong>امتحانات نهاية الفصل الثاني:</strong> 15-30 مايو 2026</li>
+                        <li>📖 <strong>امتحانات الفصل الصيفي:</strong> 15-25 أغسطس 2026</li>
+                    </ul>
+                    
+                    <h4>🎓 المناسبات الأكاديمية المهمة:</h4>
+                    <ul>
+                        <li>🎊 <strong>حفل الاستقبال:</strong> 10 سبتمبر 2025</li>
+                        <li>📋 <strong>أسبوع التسجيل في المقررات:</strong> 1-8 سبتمبر 2025</li>
+                        <li>📝 <strong>آخر موعد لحذف/إضافة مقررات:</strong> 30 سبتمبر 2025</li>
+                        <li>⚠️ <strong>آخر موعد للانسحاب:</strong> 30 نوفمبر 2025</li>
+                        <li>🎓 <strong>حفل التخرج:</strong> 15 يوليو 2026</li>
+                    </ul>
+                    
+                    <h4>📊 إحصائيات الفصول:</h4>
+                    <ul>
+                        <li>⏱️ <strong>مدة كل فصل:</strong> 16 أسبوع دراسي</li>
+                        <li>📚 <strong>عدد الساعات الدراسية:</strong> 15-18 ساعة معتمدة</li>
+                        <li>📅 <strong>أيام الدراسة:</strong> الأحد - الخميس</li>
+                        <li>🕐 <strong>ساعات الدراسة:</strong> 8:00 صباحاً - 6:00 مساءً</li>
+                    </ul>
+                `,
+                related: ['holidays', 'exam-schedule', 'registration-period']
+            },
+            'holidays': {
+                title: '🕌 ما هي الإجازات الرسمية؟',
+                content: `
+                    <h4>🕌 الإجازات الدينية:</h4>
+                    <ul>
+                        <li>🌙 <strong>عيد الفطر المبارك:</strong> 5 أيام (حسب التقويم الهجري)</li>
+                        <li>🐑 <strong>عيد الأضحى المبارك:</strong> 4 أيام (حسب التقويم الهجري)</li>
+                        <li>🎊 <strong>رأس السنة الهجرية:</strong> يوم واحد</li>
+                        <li>🕌 <strong>المولد النبوي الشريف:</strong> يوم واحد</li>
+                        <li>🌙 <strong>ليلة الإسراء والمعراج:</strong> يوم واحد</li>
+                    </ul>
+                    
+                    <h4>🇹🇳 الإجازات الوطنية:</h4>
+                    <ul>
+                        <li>🎊 <strong>رأس السنة الميلادية:</strong> 1 يناير</li>
+                        <li>⚔️ <strong>ذكرى الثورة:</strong> 14 يناير</li>
+                        <li>🏛️ <strong>عيد الاستقلال:</strong> 20 مارس</li>
+                        <li>🌹 <strong>عيد الشهداء:</strong> 9 أبريل</li>
+                        <li>👨‍💼 <strong>عيد العمال:</strong> 1 مايو</li>
+                        <li>🇹🇳 <strong>عيد الجمهورية:</strong> 25 يوليو</li>
+                        <li>👩 <strong>عيد المرأة:</strong> 13 أغسطس</li>
+                    </ul>
+                    
+                    <h4>📚 الإجازات الأكاديمية:</h4>
+                    <ul>
+                        <li>❄️ <strong>العطلة الشتوية:</strong> 20 ديسمبر - 5 يناير</li>
+                        <li>🌸 <strong>عطلة الربيع:</strong> أسبوع في منتصف مارس</li>
+                        <li>☀️ <strong>العطلة الصيفية:</strong> 1 يوليو - 31 أغسطس</li>
+                        <li>📖 <strong>فترات مراجعة الامتحانات:</strong> أسبوع قبل كل فترة امتحانات</li>
+                    </ul>
+                    
+                    <h4>ℹ️ ملاحظات مهمة:</h4>
+                    <ul>
+                        <li>📅 قد تتغير تواريخ الإجازات الدينية حسب التقويم القمري</li>
+                        <li>📢 سيتم الإعلان عن أي تغييرات مسبقاً على الموقع الرسمي</li>
+                        <li>📚 لا توجد محاضرات أو امتحانات خلال الإجازات الرسمية</li>
+                        <li>🏛️ تبقى بعض الخدمات الإدارية متاحة بنظام المناوبة</li>
+                        <li>📞 خدمة الطوارئ متاحة 24/7 حتى خلال الإجازات</li>
+                    </ul>
+                `,
+                related: ['academic-year', 'exam-schedule', 'office-hours']
+            },
+            'grading-system': {
+                title: '📊 كيف يتم تقييم الطلاب؟',
+                content: `
+                    <h4>📈 نظام التقييم المتكامل:</h4>
+                    <ul>
+                        <li>📝 <strong>الامتحانات الدورية:</strong> 30% من الدرجة النهائية</li>
+                        <li>📋 <strong>أعمال السنة:</strong> 20% من الدرجة النهائية</li>
+                        <li>📚 <strong>البحوث والمشاريع:</strong> 20% من الدرجة النهائية</li>
+                        <li>📖 <strong>الامتحان النهائي:</strong> 30% من الدرجة النهائية</li>
+                    </ul>
+                    
+                    <h4>🎯 سلم الدرجات:</h4>
+                    <ul>
+                        <li>🏆 <strong>ممتاز (A):</strong> 18-20 نقطة</li>
+                        <li>🥇 <strong>جيد جداً (B+):</strong> 16-17.99 نقطة</li>
+                        <li>🥈 <strong>جيد (B):</strong> 14-15.99 نقطة</li>
+                        <li>🥉 <strong>مقبول (C):</strong> 12-13.99 نقطة</li>
+                        <li>⚠️ <strong>ضعيف (D):</strong> 10-11.99 نقطة</li>
+                        <li>❌ <strong>راسب (F):</strong> أقل من 10 نقاط</li>
+                    </ul>
+                    
+                    <h4>📊 نظام المعدل التراكمي (GPA):</h4>
+                    <ul>
+                        <li>🔢 <strong>حساب المعدل:</strong> مجموع (الدرجة × الساعات المعتمدة) ÷ مجموع الساعات</li>
+                        <li>📈 <strong>الحد الأدنى للنجاح:</strong> معدل 2.0 من 4.0</li>
+                        <li>🎓 <strong>شروط التخرج:</strong> معدل تراكمي لا يقل عن 2.0</li>
+                        <li>🏅 <strong>التخرج بمرتبة الشرف:</strong> معدل 3.5 فما فوق</li>
+                    </ul>
+                    
+                    <h4>📝 أنواع التقييم:</h4>
+                    <ul>
+                        <li>✍️ <strong>امتحانات كتابية:</strong> أسئلة مقالية ومتعددة الخيارات</li>
+                        <li>💻 <strong>امتحانات إلكترونية:</strong> عبر منصة التعليم الإلكتروني</li>
+                        <li>📊 <strong>عروض تقديمية:</strong> تقييم المهارات الشفهية</li>
+                        <li>🔬 <strong>تطبيقات عملية:</strong> للمواد التطبيقية</li>
+                        <li>📝 <strong>واجبات منزلية:</strong> تقييم مستمر للفهم</li>
+                        <li>👥 <strong>مشاريع جماعية:</strong> تطوير مهارات العمل الجماعي</li>
+                    </ul>
+                `,
+                related: ['exam-schedule', 'make-up-exams', 'academic-year']
+            },
+            'exam-schedule': {
+                title: '📅 متى تُجرى الامتحانات النهائية؟',
+                content: `
+                    <h4>📖 جدول الامتحانات النهائية:</h4>
+                    <ul>
+                        <li>📅 <strong>الفصل الأول:</strong> من 15 إلى 30 يناير 2026</li>
+                        <li>📅 <strong>الفصل الثاني:</strong> من 15 إلى 30 مايو 2026</li>
+                        <li>📅 <strong>الفصل الصيفي:</strong> من 15 إلى 25 أغسطس 2026</li>
+                        <li>🔄 <strong>امتحانات الإعادة:</strong> بعد أسبوعين من النتائج</li>
+                    </ul>
+                    
+                    <h4>⏰ مواعيد الامتحانات اليومية:</h4>
+                    <ul>
+                        <li>🌅 <strong>الفترة الصباحية:</strong> 8:00 - 11:00 صباحاً</li>
+                        <li>☀️ <strong>فترة الظهيرة:</strong> 12:00 - 3:00 ظهراً</li>
+                        <li>🌆 <strong>الفترة المسائية:</strong> 4:00 - 7:00 مساءً</li>
+                    </ul>
+                    
+                    <h4>📋 إجراءات ما قبل الامتحان:</h4>
+                    <ul>
+                        <li>📢 <strong>إعلان الجدول:</strong> قبل 3 أسابيع من الامتحانات</li>
+                        <li>🆔 <strong>بطاقة الامتحان:</strong> يجب إحضارها مع بطاقة الهوية</li>
+                        <li>📚 <strong>فترة المراجعة:</strong> أسبوع بدون محاضرات جديدة</li>
+                        <li>❓ <strong>جلسات أسئلة وأجوبة:</strong> مع أساتذة المقررات</li>
+                    </ul>
+                    
+                    <h4>📏 قواعد قاعة الامتحان:</h4>
+                    <ul>
+                        <li>⏰ <strong>الحضور:</strong> قبل 30 دقيقة من بداية الامتحان</li>
+                        <li>📱 <strong>الأجهزة الممنوعة:</strong> الهواتف والأجهزة الذكية</li>
+                        <li>📝 <strong>الأدوات المسموحة:</strong> أقلام وآلة حاسبة (حسب المقرر)</li>
+                        <li>🚪 <strong>عدم السماح بالخروج:</strong> خلال أول 30 دقيقة</li>
+                        <li>🔇 <strong>الهدوء التام:</strong> منع التحدث أو إصدار أصوات</li>
+                    </ul>
+                    
+                    <h4>📊 إعلان النتائج:</h4>
+                    <ul>
+                        <li>💻 <strong>النتائج الإلكترونية:</strong> بعد 10 أيام من انتهاء الامتحانات</li>
+                        <li>📄 <strong>كشف الدرجات الرسمي:</strong> من شؤون الطلاب</li>
+                        <li>❓ <strong>مراجعة الدرجات:</strong> خلال أسبوع من إعلان النتائج</li>
+                        <li>📧 <strong>إشعار ولي الأمر:</strong> بالنتائج عبر البريد الإلكتروني</li>
+                    </ul>
+                `,
+                related: ['grading-system', 'make-up-exams', 'academic-year']
+            },
+            'elearning-access': {
+                title: '🌐 كيف أصل إلى منصة التعليم الإلكتروني؟',
+                content: `
+                    <h4>🔗 رابط المنصة والوصول:</h4>
+                    <ul>
+                        <li>🌐 <strong>الرابط الرسمي:</strong> elearning.bajiAcademy.edu.tn</li>
+                        <li>📱 <strong>التطبيق المحمول:</strong> متاح على App Store و Google Play</li>
+                        <li>💻 <strong>متطلبات النظام:</strong> متصفح حديث، اتصال إنترنت مستقر</li>
+                    </ul>
+                    
+                    <h4>🔐 خطوات تسجيل الدخول:</h4>
+                    <ul>
+                        <li><strong>الخطوة 1:</strong> 🌐 انتقل إلى موقع المنصة</li>
+                        <li><strong>الخطوة 2:</strong> 🆔 أدخل رقم الطالب (Student ID)</li>
+                        <li><strong>الخطوة 3:</strong> 🔑 أدخل كلمة المرور الافتراضية (تاريخ الميلاد)</li>
+                        <li><strong>الخطوة 4:</strong> ✅ اضغط على "تسجيل الدخول"</li>
+                        <li><strong>الخطوة 5:</strong> 🔄 غيّر كلمة المرور عند أول دخول</li>
+                    </ul>
+                    
+                    <h4>📚 المحتوى المتاح على المنصة:</h4>
+                    <ul>
+                        <li>📹 <strong>المحاضرات المسجلة:</strong> جميع الدروس بجودة عالية</li>
+                        <li>📄 <strong>المواد التعليمية:</strong> كتب، عروض تقديمية، مراجع</li>
+                        <li>📝 <strong>الواجبات والتكليفات:</strong> مع مواعيد التسليم</li>
+                        <li>📊 <strong>الاختبارات القصيرة:</strong> تقييم مستمر للفهم</li>
+                        <li>💬 <strong>منتديات النقاش:</strong> تفاعل مع الأساتذة والزملاء</li>
+                        <li>📅 <strong>التقويم الأكاديمي:</strong> مواعيد مهمة وفعاليات</li>
+                        <li>📈 <strong>تتبع التقدم:</strong> معدلات ونتائج مفصلة</li>
+                    </ul>
+                    
+                    <h4>🔧 حل المشاكل الشائعة:</h4>
+                    <ul>
+                        <li>🔑 <strong>نسيان كلمة المرور:</strong> استخدم خاصية "استعادة كلمة المرور"</li>
+                        <li>🆔 <strong>مشكلة في رقم الطالب:</strong> تواصل مع شؤون الطلاب</li>
+                        <li>🌐 <strong>بطء في التحميل:</strong> تحقق من سرعة الإنترنت</li>
+                        <li>📱 <strong>مشاكل التطبيق:</strong> حدّث التطبيق لآخر إصدار</li>
+                        <li>🔧 <strong>مشاكل تقنية أخرى:</strong> اتصل بالدعم التقني</li>
+                    </ul>
+                    
+                    <h4>💡 نصائح لاستخدام أفضل:</h4>
+                    <ul>
+                        <li>📶 <strong>اتصال مستقر:</strong> استخدم WiFi للفيديوهات الطويلة</li>
+                        <li>🔔 <strong>تفعيل الإشعارات:</strong> لتلقي تحديثات فورية</li>
+                        <li>💾 <strong>حفظ المواد:</strong> حمّل المحتوى للمطالعة دون إنترنت</li>
+                        <li>📱 <strong>المتابعة المنتظمة:</strong> ادخل للمنصة يومياً</li>
+                        <li>❓ <strong>استفد من المنتديات:</strong> اطرح أسئلتك واشارك</li>
+                    </ul>
+                `,
+                related: ['mobile-app', 'technical-support', 'contact-info']
+            },
+            'contact-info': {
+                title: '📞 كيف يمكنني التواصل مع الأكاديمية؟',
+                content: `
+                    <h4>📞 أرقام الهاتف:</h4>
+                    <ul>
+                        <li>☎️ <strong>الخط الرئيسي:</strong> 71 123 456 (+216)</li>
+                        <li>📱 <strong>واتساب:</strong> 98 765 432 (+216)</li>
+                        <li>🆘 <strong>خط الطوارئ:</strong> 90 111 222 (+216)</li>
+                        <li>🎓 <strong>شؤون الطلاب:</strong> 71 123 457 (+216)</li>
+                        <li>📚 <strong>الشؤون الأكاديمية:</strong> 71 123 458 (+216)</li>
+                        <li>💰 <strong>الشؤون المالية:</strong> 71 123 459 (+216)</li>
+                    </ul>
+                    
+                    <h4>📧 البريد الإلكتروني:</h4>
+                    <ul>
+                        <li>📮 <strong>البريد العام:</strong> info@bajiAcademy.edu.tn</li>
+                        <li>🎓 <strong>شؤون الطلاب:</strong> students@bajiAcademy.edu.tn</li>
+                        <li>📚 <strong>الشؤون الأكاديمية:</strong> academic@bajiAcademy.edu.tn</li>
+                        <li>💰 <strong>الشؤون المالية:</strong> finance@bajiAcademy.edu.tn</li>
+                        <li>🔧 <strong>الدعم التقني:</strong> tech@bajiAcademy.edu.tn</li>
+                        <li>📢 <strong>العلاقات العامة:</strong> pr@bajiAcademy.edu.tn</li>
+                    </ul>
+                    
+                    <h4>📍 العنوان والموقع:</h4>
+                    <ul>
+                        <li>🏛️ <strong>العنوان:</strong> شارع الإمام الباجي، المنطقة الجامعية، تونس العاصمة</li>
+                        <li>📮 <strong>صندوق البريد:</strong> ص.ب 1234، تونس 1000</li>
+                        <li>🗺️ <strong>الإحداثيات:</strong> 36.8065° شمال، 10.1815° شرق</li>
+                        <li>🚌 <strong>المواصلات العامة:</strong> خط مترو الأنفاق رقم 2، محطة الجامعة</li>
+                    </ul>
+                    
+                    <h4>💬 وسائل التواصل الاجتماعي:</h4>
+                    <ul>
+                        <li>📘 <strong>فيسبوك:</strong> @BajiAcademyOfficial</li>
+                        <li>🐦 <strong>تويتر:</strong> @BajiAcademy</li>
+                        <li>📸 <strong>إنستغرام:</strong> @baji_academy</li>
+                        <li>💼 <strong>لينكد إن:</strong> Baji Academy</li>
+                        <li>📺 <strong>يوتيوب:</strong> قناة أكاديمية الإمام الباجي</li>
+                        <li>💬 <strong>تيليجرام:</strong> @BajiAcademyNews</li>
+                    </ul>
+                    
+                    <h4>🌐 الخدمات الإلكترونية:</h4>
+                    <ul>
+                        <li>💻 <strong>الموقع الرسمي:</strong> www.bajiAcademy.edu.tn</li>
+                        <li>🎓 <strong>نظام إدارة الطلاب:</strong> portal.bajiAcademy.edu.tn</li>
+                        <li>📚 <strong>المكتبة الرقمية:</strong> library.bajiAcademy.edu.tn</li>
+                        <li>💬 <strong>الدردشة المباشرة:</strong> متاحة على الموقع 24/7</li>
+                        <li>📱 <strong>التطبيق المحمول:</strong> Baji Academy App</li>
+                    </ul>
+                    
+                    <h4>🏢 مكاتب الخدمات:</h4>
+                    <ul>
+                        <li>🎓 <strong>مكتب شؤون الطلاب:</strong> الطابق الأرضي، قاعة A</li>
+                        <li>📚 <strong>مكتب الشؤون الأكاديمية:</strong> الطابق الأول، قاعة B</li>
+                        <li>💰 <strong>مكتب الشؤون المالية:</strong> الطابق الأرضي، قاعة C</li>
+                        <li>🔧 <strong>مكتب الدعم التقني:</strong> الطابق الثاني، قاعة IT</li>
+                    </ul>
+                `,
+                related: ['office-hours', 'technical-support', 'complaints']
+            },
+            'office-hours': {
+                title: '⏰ ما هي ساعات عمل خدمة الطلاب؟',
+                content: `
+                    <h4>🕐 ساعات العمل الرسمية:</h4>
+                    <ul>
+                        <li>📅 <strong>الأحد - الخميس:</strong> من 8:00 صباحاً إلى 5:00 مساءً</li>
+                        <li>🕌 <strong>الجمعة:</strong> من 8:00 صباحاً إلى 12:00 ظهراً</li>
+                        <li>🚫 <strong>السبت:</strong> عطلة أسبوعية</li>
+                    </ul>
+                    
+                    <h4>🏢 ساعات عمل المكاتب المختلفة:</h4>
+                    <ul>
+                        <li>🎓 <strong>شؤون الطلاب:</strong> 8:00 - 17:00 (استراحة 12:30-13:30)</li>
+                        <li>📚 <strong>الشؤون الأكاديمية:</strong> 8:30 - 16:30</li>
+                        <li>💰 <strong>الشؤون المالية:</strong> 8:00 - 15:00</li>
+                        <li>📋 <strong>القبول والتسجيل:</strong> 8:00 - 16:00</li>
+                        <li>🔧 <strong>الدعم التقني:</strong> 9:00 - 17:00</li>
+                    </ul>
+                    
+                    <h4>📞 خدمة العملاء والدعم:</h4>
+                    <ul>
+                        <li>💬 <strong>الدردشة المباشرة:</strong> متاحة 24/7</li>
+                        <li>📧 <strong>البريد الإلكتروني:</strong> رد خلال 24 ساعة</li>
+                        <li>📱 <strong>واتساب:</strong> 8:00 - 20:00 يومياً</li>
+                        <li>☎️ <strong>المكالمات الهاتفية:</strong> حسب ساعات العمل الرسمية</li>
+                        <li>🆘 <strong>خط الطوارئ:</strong> متاح 24/7</li>
+                    </ul>
+                    
+                    <h4>📚 ساعات عمل المرافق:</h4>
+                    <ul>
+                        <li>📖 <strong>المكتبة الرئيسية:</strong> 7:00 - 22:00 (الأحد-الخميس)</li>
+                        <li>🕌 <strong>المكتبة (الجمعة):</strong> 8:00 - 12:00</li>
+                        <li>💻 <strong>مختبرات الحاسوب:</strong> 8:00 - 20:00</li>
+                        <li>🍽️ <strong>كافتيريا الطلاب:</strong> 7:00 - 19:00</li>
+                        <li>🏥 <strong>العيادة الطبية:</strong> 8:00 - 16:00 + مناوبة طوارئ</li>
+                    </ul>
+                    
+                    <h4>🎯 ساعات الذروة وأفضل أوقات الزيارة:</h4>
+                    <ul>
+                        <li>⚠️ <strong>ساعات الذروة:</strong> 9:00-11:00 و 14:00-16:00</li>
+                        <li>✅ <strong>أفضل أوقات:</strong> 8:00-9:00 أو بعد 16:00</li>
+                        <li>📅 <strong>أيام الذروة:</strong> الأحد والثلاثاء (بداية ووسط الأسبوع)</li>
+                        <li>😊 <strong>أيام أقل ازدحاماً:</strong> الأربعاء والخميس</li>
+                    </ul>
+                    
+                    <h4>🎓 ساعات استقبال الأساتذة:</h4>
+                    <ul>
+                        <li>👨‍🏫 <strong>الساعات المكتبية:</strong> محددة لكل أستاذ على المنصة</li>
+                        <li>📅 <strong>مواعيد خاصة:</strong> بالتنسيق المسبق</li>
+                        <li>💻 <strong>الاستشارة الإلكترونية:</strong> عبر المنصة أو البريد</li>
+                        <li>👥 <strong>اللقاءات الجماعية:</strong> حسب الحاجة</li>
+                    </ul>
+                    
+                    <h4>🕌 ساعات العمل في الإجازات:</h4>
+                    <ul>
+                        <li>🌙 <strong>إجازة رمضان:</strong> 9:00 - 15:00</li>
+                        <li>🎊 <strong>الإجازات الرسمية:</strong> خدمات طوارئ فقط</li>
+                        <li>☀️ <strong>العطلة الصيفية:</strong> 8:00 - 14:00</li>
+                        <li>❄️ <strong>العطلة الشتوية:</strong> ساعات مخففة 9:00 - 15:00</li>
+                    </ul>
+                `,
+                related: ['contact-info', 'technical-support', 'holidays']
+            }
+        };
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchSuggestions = document.getElementById('searchSuggestions');
+        
+        // Sample search suggestions
+        const searchKeywords = [
+            'شروط التسجيل', 'الرسوم الدراسية', 'التقويم الأكاديمي', 'المنح الدراسية',
+            'منصة التعليم الإلكتروني', 'الامتحانات', 'السكن الطلابي', 'تواصل معنا',
+            'نظام التقييم', 'البرامج الدراسية', 'الإجازات الرسمية', 'ساعات العمل'
+        ];
+
+        // Search input handler
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim();
+            if (query.length > 0) {
+                showSearchSuggestions(query);
+            } else {
+                hideSearchSuggestions();
+            }
+        });
+
+        // Show search suggestions
+        function showSearchSuggestions(query) {
+            const filtered = searchKeywords.filter(keyword => 
+                keyword.includes(query) || query.includes(keyword.split(' ')[0])
+            );
+            
+            if (filtered.length > 0) {
+                searchSuggestions.innerHTML = filtered.slice(0, 5).map(suggestion => 
+                    `<div class="suggestion-item" onclick="selectSuggestion('${suggestion}')">${suggestion}</div>`
+                ).join('');
+                searchSuggestions.style.display = 'block';
+            } else {
+                hideSearchSuggestions();
+            }
+        }
+
+        // Hide search suggestions
+        function hideSearchSuggestions() {
+            searchSuggestions.style.display = 'none';
+        }
+
+        // Select search suggestion
+        function selectSuggestion(suggestion) {
+            searchInput.value = suggestion;
+            hideSearchSuggestions();
+            performSearch(suggestion);
+        }
+
+        // Perform search
+        function performSearch(query) {
+            // Simple search implementation
+            const results = Object.keys(faqData).filter(key => {
+                const faq = faqData[key];
+                return faq.title.includes(query) || faq.content.includes(query);
+            });
+            
+            if (results.length > 0) {
+                openModal(results[0]);
+            } else {
+                alert('لم يتم العثور على نتائج للبحث: ' + query);
+            }
+        }
+
+        // Modal functions
+        function openModal(faqId) {
+            const modal = document.getElementById('faqModal');
+            const faq = faqData[faqId];
+            
+            if (faq) {
+                document.getElementById('modalTitle').textContent = faq.title;
+                document.getElementById('modalContent').innerHTML = faq.content;
+                
+                // Add related questions
+                const relatedLinks = document.getElementById('relatedLinks');
+                relatedLinks.innerHTML = faq.related.map(relatedId => {
+                    const relatedFaq = faqData[relatedId];
+                    return relatedFaq ? 
+                        `<a href="#" class="related-link" onclick="openModal('${relatedId}')">${relatedFaq.title}</a>` : '';
+                }).join('');
+                
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('faqModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('faqModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.search-container')) {
+                hideSearchSuggestions();
+            }
+        });
+
+        // Keyboard navigation
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                performSearch(this.value);
+            }
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation for category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add accessibility features
+        document.querySelectorAll('.category-card, .top-question-card').forEach(element => {
+            element.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Simple analytics
+        function trackEvent(action, category) {
+            console.log(`Event tracked: ${action} in ${category}`);
+        }
+
+        // Track modal opens
+        const originalOpenModal = openModal;
+        openModal = function(faqId) {
+            trackEvent('modal_open', faqId);
+            originalOpenModal(faqId);
+        };
+
+        // Add print functionality
+        function printFAQ() {
+            window.print();
+        }
+
+        // Service worker for caching (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // Service worker registration would go here
+                console.log('Service Worker support detected');
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('FAQ page loaded successfully');
+            
+            // Focus on search input for better UX
+            searchInput.focus();
+            
+            // Add loading state management
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
